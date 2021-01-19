@@ -1,57 +1,43 @@
 <?php 
         abstract class Animal {
-            function __construct($quantity, $name) {
-                $this->quantity = $quantity;
+            function __construct($name, $imgUrl, $sound) { 
                 $this->name = $name;
-
+                $this->imgUrl = $imgUrl;
+                $this->sound = $sound;
             }
-
-            public $img;
            
-         //   public $quantity; Dessa gör ingen skillnad?
-         //   public $name; 
+            public $name; 
+            public $imgUrl;
+            public $sound; 
 
-            public function printAnimal() {
-                
-            }
+
+        abstract function makeSound();
+
+        public function imgClick() {
+            $alert = 'alert("' . $this->makeSound() . '")'; 
+            return $alert;
+
+
+
+        }
+
+        public function imgEcho() {
+            echo "<img src='" . $this->imgUrl . "' onclick='" . $this->imgClick() . "'.>";
+        }
 
         }
 
         class Monkey extends Animal {
-            function __construct($quantity, $name) {
-                parent::__construct($quantity, $name);
+            function __construct($name, $imgUrl, $sound) {
+                parent::__construct($name, $imgUrl, $sound);
             }
-            
-          public $img = "<img src='./pictures/apa.jpg'>";
-            
-        }
-/* 
-        class Giraffe extends Animal {
-            function __construct($quantity, $name) {
-                parent::__construct($quantity, $name);
-            }
-            
-     
-            
-        }
 
-        class Tiger extends Animal {
-            function __construct($quantity, $name) {
-                parent::__construct($quantity, $name);
-            }
             
-     
-            
-        }
-
-        class Coconut extends Animal {
-            function __construct($quantity, $name) {
-                parent::__construct($quantity, $name);
-            }
-            
-     
+          
+            function makeSound() { 
+                return "hohahuha";
+                
+            } 
             
         }
-
- */
-?>
+ 
