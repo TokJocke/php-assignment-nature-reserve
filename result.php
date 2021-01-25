@@ -9,17 +9,7 @@
             max-width: 300px;
             margin-bottom: 30px;    
         }
-        .box {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            margin-right: 30px;
-        }
-        .group {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: row;
-        }
+
     </style>
 </head>
 
